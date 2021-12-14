@@ -8,25 +8,30 @@ ModelImporter:
     100004: BoxHL
     100006: BoxInside
     100008: Divider
+    100010: Triangle
     400000: Box
     400002: //RootNode
     400004: BoxHL
     400006: BoxInside
     400008: Divider
+    400010: Triangle
     2100000: Material
     2100002: No Name
     2300000: Box
     2300002: BoxHL
     2300004: BoxInside
     2300006: Divider
+    2300008: Triangle
     3300000: Box
     3300002: BoxHL
     3300004: BoxInside
     3300006: Divider
+    3300008: Triangle
     4300000: Box
     4300002: BoxInside
     4300004: BoxHL
     4300006: Divider
+    4300008: Triangle
   externalObjects: {}
   materials:
     importMaterials: 0
