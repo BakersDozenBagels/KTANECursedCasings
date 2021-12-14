@@ -72,9 +72,8 @@ public class GuaranteedModule : MonoBehaviour
         float time = Time.time;
         while(Time.time - time < .5f)
         {
-            _cover.gameObject.transform.localScale = new Vector3(Mathf.Max(0f, 1f - 4f * Mathf.Abs(Time.time - time - .5f)), 1f, 1f);
+            _cover.gameObject.transform.localScale = new Vector3(Mathf.Lerp(0f, 1f, Mathf.Min(1, 4 * (Time.time - time))), 1f, 1f);
             _pages[prevPage].ForEach(t => t.localPosition = new Vector3(t.localPosition.x, Mathf.Lerp(0f, .2f, Mathf.Max(0f, 1f - 2f * (Time.time - time))), t.localPosition.z));
-            _pages[_currentPage].ForEach(t => t.localPosition = new Vector3(t.localPosition.x, Mathf.Lerp(0f, .2f, Mathf.Max(0f, 2f * (Time.time - time) - 1f)), t.localPosition.z));
             Divider.localPosition = new Vector3(0f, Mathf.Lerp(0f, .2f, Mathf.Max(0f, 2f * (Time.time - time) - 1f, 1f - 2f * (Time.time - time))), 0f);
             UpdateAnchors();
 
@@ -86,8 +85,7 @@ public class GuaranteedModule : MonoBehaviour
 
         while(Time.time - time < 1f)
         {
-            _cover.gameObject.transform.localScale = new Vector3(Mathf.Max(0f, 1f - 4f * Mathf.Abs(Time.time - time - .5f)), 1f, 1f);
-            _pages[prevPage].ForEach(t => t.localPosition = new Vector3(t.localPosition.x, Mathf.Lerp(0f, .2f, Mathf.Max(0f, 1f - 2f * (Time.time - time))), t.localPosition.z));
+            _cover.gameObject.transform.localScale = new Vector3(Mathf.Lerp(0f, 1f, Mathf.Min(1, 4 - 4 * (Time.time - time))), 1f, 1f);
             _pages[_currentPage].ForEach(t => t.localPosition = new Vector3(t.localPosition.x, Mathf.Lerp(0f, .2f, Mathf.Max(0f, 2f * (Time.time - time) - 1f)), t.localPosition.z));
             Divider.localPosition = new Vector3(0f, Mathf.Lerp(0f, .2f, Mathf.Max(0f, 2f * (Time.time - time) - 1f, 1f - 2f * (Time.time - time))), 0f);
             UpdateAnchors();
