@@ -19,6 +19,6 @@ MonoBehaviour:
 
     Currently contains a torus casing holding 23 modules and an interactive one holding
     102.'
-  version: 2.2
+  version: 2.3
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 051c3685ee999194e8f63d226d6a27a8, type: 3}

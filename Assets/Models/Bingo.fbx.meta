@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: 6ee29dd6113a7da4b9fab23643511c20
+guid: b57e49a81f6409d4988aab258470afb5
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: BingoCase
+    100004: BingoHL
     400000: //RootNode
-    2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Circle
-    6400000: //RootNode
+    400002: BingoCase
+    400004: BingoHL
+    2100000: Material
+    2100002: No Name
+    2300000: BingoCase
+    2300002: BingoHL
+    3300000: BingoCase
+    3300002: BingoHL
+    4300000: BingoCase
+    4300002: BingoHL
   externalObjects: {}
   materials:
     importMaterials: 0

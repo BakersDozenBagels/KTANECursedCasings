@@ -118,15 +118,35 @@ public class GuaranteedModule : MonoBehaviour
         yield return new WaitUntil(() => prop.GetValue(state, new object[0]) != null);
 #endif
         */
+        yield return null;
         yield return new WaitForSeconds(1f);
         yield return null;
 
         _modules.Add(transform.GetChild(0).GetChild(3).GetChild(2), transform.GetChild(0).GetChild(9));
+        transform.GetChild(0).GetChild(9).localScale = Vector3.zero;
 
         List<Transform> modules = new List<Transform>();
         List<Transform> empties = new List<Transform>();
 
-        for(int i = transform.GetChild(0).childCount - 1; i > 9; i--)
+        Transform trt = transform.GetChild(0).GetChild(transform.GetChild(0).childCount - 1);
+        if(trt.gameObject.name.ContainsIgnoreCase("Timer") && !trt.gameObject.name.ContainsIgnoreCase("Module"))
+        {
+            _modules[transform.GetChild(0).GetChild(3).GetChild(2)] = trt;
+        }
+        else
+        {
+            if(trt.gameObject.name.ContainsIgnoreCase("Empty"))
+            {
+                empties.Add(trt);
+            }
+            else
+            {
+                _emptyPages[(transform.GetChild(0).childCount - 11) / AnchorsLength] = false;
+                modules.Add(trt);
+            }
+        }
+
+        for(int i = transform.GetChild(0).childCount - 2; i > 9; i--)
         {
             Transform tr = transform.GetChild(0).GetChild(i);
             if(tr.gameObject.name.ContainsIgnoreCase("Empty"))
@@ -210,7 +230,7 @@ public class GuaranteedModule : MonoBehaviour
     public static string LookReflection(object o)
     {
         return o.GetType().GetFields().Select(m => m.Name + ":" + m.ReflectedType + ":" + m.GetValue(o)).Join("/");
-    */
+        */
     }
 }
 
